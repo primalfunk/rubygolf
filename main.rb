@@ -8,18 +8,19 @@ def sum_array(a)
 end
 
 #2. rock paper scissors
+
 def rps
-  var w = ""
-  print "(r, p, s): "
-  case gets.strip
-  when 'r'
+  h = {'r': 0, 'p': 1, 's': 2}
+  print "rps: "
+  case gets.chop
+  when 'r' 
     u = 0
-  when 'p'
+  when 'p' 
     u = 1
-  else
+  else 
     u = 2
   end
-  c = 1 + rand(3)
+  c = rand(3)
   if (u == 0 && c == 1) || (u == 1 && c == 2) || (u == 2 && c == 0)
     w = 'c'
   elsif (u == c)
@@ -29,6 +30,8 @@ def rps
   end
   w
 end
+
+rps
 
 #3. Fizz Buzz
 def fizzBuzz
@@ -54,6 +57,8 @@ def mults(n, m)
   a
 end
 
+puts mults(5, 300)
+
 #5. Caesar Cipher Take in a string and an offset, encrypt the string by moving letters over by the offset and return 
 # the encrypted string (e.g “ab”, 3 would return “de”). When you hit Z loop back to A.
 def cipher(s, o)
@@ -65,7 +70,7 @@ def cipher(s, o)
       a.push((i.ord + o).chr)
     end
   end
-  a.join('')
+  a
 end
 
 #6. String Counter Given a string and a sub string count the number of times the substring occurs 
