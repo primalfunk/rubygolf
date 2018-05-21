@@ -1,16 +1,16 @@
 #1. sum an array
-@t = 0
 def sum_array(a)
+  t = 0
+  puts a
   a.each do |i|
-    @t = @t.to_i + a[i].to_i
+    t = t + i
   end
-  @t
+  t
 end
 
 #2. rock paper scissors
 
 def rps
-  h = {'r': 0, 'p': 1, 's': 2}
   print "rps: "
   case gets.chop
   when 'r' 
@@ -30,8 +30,6 @@ def rps
   end
   w
 end
-
-rps
 
 #3. Fizz Buzz
 def fizzBuzz
@@ -56,8 +54,6 @@ def mults(n, m)
   end
   a
 end
-
-puts mults(5, 300)
 
 #5. Caesar Cipher Take in a string and an offset, encrypt the string by moving letters over by the offset and return 
 # the encrypted string (e.g “ab”, 3 would return “de”). When you hit Z loop back to A.
@@ -96,12 +92,14 @@ end
 def loveTest(s1, s2)
   c = 0
   s1.split('').each do |i|
-    if s2.split('').include?("#{i}")
+    if s2.split('').include?(i)
       c += 1
     end
   end
-  (s1.length + s2.length).to_f / c.to_f
+  (s1.length + s2.length) / c
 end
+
+puts loveTest('abcde', 'de')
 
 #9. Shopping List Takes in a list of strings. Program sorts the list non case sensitive, removes duplicates and returns 
 # as hash using position in the list as priority.
